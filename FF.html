@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http="equiv="Content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+        <title> Forest Fire Prediction</title>
+        <link rel="icon" href="https://image.flaticon.com/icons/svg/2958/2950411.svg" type="image/icon type">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+    </head>
+    <style>
+        body{
+            background-image: url("https://d1avenlh0i1xmr.cloudfront.net/6859e8b9-caeb-4905-acf6-385295d43325/forest-fires.jpg");
+            background-image:no-repeat;
+            background-size:cover;
+
+        }
+    </style>
+    <body>
+        <div class="container justify-content-center mt-2">
+            <h1 class="text-white mt-2">Forest Fire Prediction</h1>
+            <h5 class="text-white"> Predict the percentage of Forest-Fire Occurance</h5>
+            <form action="/predict" method="post">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 cardbg">
+                        <div class="row">
+                            <div class="col-12 mt-3 mb-1">
+                                <div class="form-group">
+                                    <label for="RH" class="text-white">Relative Humidity</label>
+                                    <input class="form-control validate border border-warning" placeholder="RH in %" name="RH" id="first_name" type="text">
+
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="wind" class="text-white">Wind</label>
+                                <input id="last_name" name="Wind" placeholder="Wind speed in km/h" type="text" class="validate form-control border border-warning">  
+                        
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="Temperature" class="text-white">Temperature</label>
+                                <input id="_name" name="Temperature" placeholder="Temperature in Celsius" type="text" class="validate form-control border border-warning">
+
+                            </div>
+                            <div class="ml-3 mb-1 mt-2">
+                                <button type="submit" class="btn btn-light">Predict</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-4 d-flex align-items-center">
+                        <h3 class="prediction text-white">{{pred}}</h3>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+
+</html>
+
+
+
+
